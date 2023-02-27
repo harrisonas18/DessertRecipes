@@ -9,10 +9,10 @@ import Foundation
 
 struct RecipeModel: Codable, Identifiable {
     
-    var id = UUID()
-    var recipeID: String
-    var recipeName: String
-    var recipeThumbnailURL: String
+    let id = UUID()
+    let recipeID: String
+    let recipeName: String
+    let recipeThumbnailURL: String
     
     enum CodingKeys: String, CodingKey {
         case recipeID = "idMeal"
@@ -23,7 +23,7 @@ struct RecipeModel: Codable, Identifiable {
 }
 
 struct Recipes: Codable {
-    var meals: [RecipeModel]
+    let meals: [RecipeModel]
 }
 
 

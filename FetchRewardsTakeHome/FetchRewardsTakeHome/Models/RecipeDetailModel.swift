@@ -9,11 +9,11 @@ import Foundation
 
 struct RecipeDetailModel: Codable, Identifiable {
     
-    var id = UUID()
-    var recipeID: String
-    var recipeName: String
-    var recipeThumbnailURL: String
-    var instructions: String
+    let id = UUID()
+    let recipeID: String
+    let recipeName: String
+    let recipeThumbnailURL: String
+    let instructions: String
     
     var ingredient1: String?
     var ingredient2: String?
@@ -159,5 +159,5 @@ struct RecipeDetailModel: Codable, Identifiable {
 }
 
 struct RecipeDetail: Codable {
-    var meals: [RecipeDetailModel]
+    let meals: [RecipeDetailModel]
 }

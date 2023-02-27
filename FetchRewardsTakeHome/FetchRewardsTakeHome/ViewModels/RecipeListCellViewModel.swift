@@ -12,7 +12,7 @@ import SwiftUI
 class RecipeListCellViewModel: ObservableObject {
     
     @Published var image = UIImage()
-    let cache = ImageCache.shared
+    private let cache = ImageCache.shared
     
     func fetchImage(recipe: RecipeModel) async {
         image = await cache.retrievePhoto(recipe: recipe)

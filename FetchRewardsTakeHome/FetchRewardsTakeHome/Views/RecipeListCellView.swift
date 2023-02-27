@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipeListCellView: View {
     
     @StateObject var vm = RecipeListCellViewModel()
-    @State var recipe: RecipeModel?
+    @State var recipe: RecipeModel
     
     @MainActor
     var body: some View {
@@ -28,9 +28,9 @@ struct RecipeListCellView: View {
                             .stroke(Color("ImageBorderColor"), lineWidth: 2)
                         )
                     .task {
-                       await vm.fetchImage(recipe: recipe!)
+                       await vm.fetchImage(recipe: recipe)
                     }
-                Text(recipe?.recipeName ?? "Recipe Name")
+                Text(recipe.recipeName)
                     .font(.system(size: 18))
                     .foregroundColor(Color("ImageBorderColor"))
                 Spacer()
@@ -39,11 +39,5 @@ struct RecipeListCellView: View {
             Divider()
         }
         
-    }
-}
-
-struct RecipeListCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeListCellView()
     }
 }

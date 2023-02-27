@@ -13,8 +13,8 @@ class RecipeDetailViewModel: ObservableObject {
     
     @Published var recipeImage = UIImage()
     @Published var recipeDetail: RecipeDetailModel?
-    let cache = ImageCache.shared
-    let network = NetworkAPI.shared
+    private let cache = ImageCache.shared
+    private let network = NetworkAPI.shared
     
     func fetchImage(recipe: RecipeModel) async {
         recipeImage = await cache.retrievePhoto(recipe: recipe)
