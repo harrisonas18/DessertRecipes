@@ -30,5 +30,5 @@ Network API - The network api houses the logic to request and cache network requ
 Image Cache - The image cache houses the logic to download and store all the image UIImage objects and corresponding data. Image data is written to the app cache via the file system and UIImage objects are written to an NSCache for in memory usage. Writing to both disk and in memory caches prevents unneeded network requests and makes subsequent loads much faster.
 
 ### Trade Offs
-For this particular exercise I sacrificed some modularity to save time. There are also some spots where code could be refactored to reduce repetitive use. Model objects could have been refactored to be more dynamic and flexible in case endpoint structure changes in the future.
+The biggest trade off I made was downloading and caching all data for the app on the first launch. This will create a slower first launch which could be optimized but I left as is for the exercise. All subsequent launches however will be very fast. Further, for this particular exercise I sacrificed some modularity to save time. There are also some spots where code could be refactored to reduce repetitive use. Model objects could have been refactored to be more dynamic and flexible in case endpoint structure changed in the future.
 
